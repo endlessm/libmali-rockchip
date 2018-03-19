@@ -23,7 +23,7 @@ Homepage: http://www.rock-chips.com/
 
 Package: libmali-rk-dev
 Section: libdevel
-Architecture: any
+Architecture: armhf
 Depends: ${misc:Depends}
 Multi-Arch: same
 Provides: libgbm-dev, libegl1-mesa-dev, libgles2-mesa-dev, opencl-c-headers
