@@ -1,7 +1,22 @@
 Source: libmali-rk
 Priority: optional
 Maintainer: Randy Li <randy.li@rock-chips.com>
-Build-Depends: debhelper (>= 9), cmake, pkg-config, cmake-data, dh-exec
+Build-Depends:
+ debhelper (>= 9),
+ cmake,
+ pkg-config,
+ cmake-data,
+ dh-exec,
+ libdrm2,
+ libx11-6,
+ libxfixes3,
+ libxext6,
+ libxdamage1,
+ libx11-xcb1,
+ libxcb1,
+ libxcb-dri2-0,
+ libwayland-client0,
+ libwayland-server0
 Standards-Version: 3.9.5
 Section: libs
 Homepage: http://www.rock-chips.com/
