@@ -1,3 +1,2 @@
 drivers/rk3288/libMali.so		usr/lib/mali-t76x/arm-linux-gnueabihf/
 drivers/rk3288/libMali.so		usr/lib/mali-t76x/arm-linux-gnueabihf/flatpak/
-drivers/wrapper/libMaliWrapper.so	usr/lib/mali-t76x/arm-linux-gnueabihf/flatpak/
