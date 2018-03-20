@@ -1,3 +1,3 @@
 D /run/flatpak/extension/org.freedesktop.Platform.GL.host/arm 0755 - - -
-L /run/flatpak/extension/org.freedesktop.Platform.GL.host/arm/1.6 - - - - /usr/lib/mali400/arm-linux-gnueabihf/flatpak
+L /run/flatpak/extension/org.freedesktop.Platform.GL.host/arm/1.6 - - - - /usr/lib/mali-t76x/arm-linux-gnueabihf/flatpak
 L /var/lib/flatpak/extension - - - - /run/flatpak/extension

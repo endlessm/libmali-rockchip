@@ -1,3 +1,0 @@
-drivers/meson8/libMali.so		usr/lib/mali400/arm-linux-gnueabihf/
-drivers/meson8/libMali.so		usr/lib/mali400/arm-linux-gnueabihf/flatpak/
-drivers/wrapper/libMaliWrapper.so	usr/lib/mali400/arm-linux-gnueabihf/flatpak/

@@ -2,11 +2,11 @@
 
 set -e
 
-THIS_PACKAGE=mali400-corelibs
+THIS_PACKAGE=mali-t76x-corelibs
 THIS_SCRIPT=prerm
 
 if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
-  dpkg-trigger register-glx-alternative-mali400
+  dpkg-trigger register-glx-alternative-mali-t76x
 fi
 
 #DEBHELPER#

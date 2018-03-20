@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+THIS_PACKAGE=mali-t76x-corelibs
+THIS_SCRIPT=postinst
+
+case "$1" in
+  configure)
+  # Activate the trigger selecting Mali-t76x as GLX provider
+  dpkg-trigger --no-await register-glx-alternative-mali-t76x
+esac
+
+#DEBHELPER#
