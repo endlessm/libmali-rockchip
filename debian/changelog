@@ -1,0 +1,303 @@
+mali400-drivers-x11 (6.0.1.0-10) master; urgency=medium
+
+  * Don't use tmpfiles for the /var/endless-extra/flatpak/extension ->
+    /var/lib/flatpak/extension symlink, as it fails on non-split systems,
+    leading to systemd-tmpfiles-setup.service exiting with a failure status.
+
+    https://phabricator.endlessm.com/T18288
+
+ -- João Paulo Rechi Vita <jprvita@endlessm.com>  Tue, 17 Oct 2017 12:02:56 -0700
+
+mali400-drivers-x11 (6.0.1.0-9) master; urgency=medium
+
+  * Add tmpfile to setup flatpak GL extension.
+
+  https://phabricator.endlessm.com/T18288
+
+ -- João Paulo Rechi Vita <jprvita@endlessm.com>  Mon, 02 Oct 2017 18:28:51 -0700
+
+mali400-drivers-x11 (6.0.1.0-8) master; urgency=medium
+
+  * Add libMaliWrapper.so to fix missing symbol in flatpak runtimes
+
+    Our mali driver is compiled against a patched X11 library that has a
+    new symbol (XDisplaySetErrorHandler) which will not be present in
+    flatpak runtimes.
+
+    Since we can not currently rebuild the driver the only solution is to add
+    a wrapper library that links with the driver and implements the missing symbol
+
+ -- Juan Pablo Ugarte <ugarte@endlessm.com>  Fri, 22 Sep 2017 16:12:40 -0300
+
+mali400-drivers-x11 (6.0.1.0-7) eos; urgency=medium
+
+  * Drop alternatives support from this package, as we'll now handle
+    altertives in the glx-alternative-mali package.
+
+  * Install libraries to /usr/lib/mali400/arm-linux-gnueabihf, to be
+    compatible with the glx-alternatives mechanism from Debian.
+
+  * Add dependency on glx-alternative-mali400.
+
+  https://phabricator.endlessm.com/T18579
+
+ -- João Paulo Rechi Vita <jprvita@endlessm.com>  Fri, 15 Sep 2017 21:01:09 -0700
+
+mali400-drivers-x11 (6.0.1.0-6) eos; urgency=medium
+
+  * Add 'lib' symlink back to driver dir so that Flatpak will look in
+    the right place (https://phabricator.endlessm.com/T18288)
+
+ -- Philip Chimento <philip@endlessm.com>  Wed, 06 Sep 2017 16:57:12 -0700
+
+mali400-drivers-x11 (6.0.1.0-5) eos; urgency=medium
+
+  * Fix DRM_FORMAT_ABGR8888 support
+    DDK @ 4cc75ca1a29036fbf9d88c70192a946691fc0a53
+
+ -- Daniel Drake <drake@endlessm.com>  Fri, 24 Feb 2017 13:55:22 -0600
+
+mali400-drivers-x11 (6.0.1.0-4) eos; urgency=medium
+
+  * Support DRM_FORMAT_ABGR8888 dmabuf import, T15393
+    DDK @ 194b82655f0dc4e146f5b7dd215f3312952aaee6
+
+ -- Daniel Drake <drake@endlessm.com>  Thu, 23 Feb 2017 07:52:21 -0600
+
+mali400-drivers-x11 (6.0.1.0-3) eos; urgency=medium
+
+  * Fix ARGB888 format code for dmabuf import, T15540
+  * DDK @ 2197bacd93d7afbccc6d6b1cb34e54ba2bcf9c71
+
+ -- Daniel Drake <drake@endlessm.com>  Fri, 10 Feb 2017 13:35:58 -0600
+
+mali400-drivers-x11 (6.0.1.0-2) eos; urgency=medium
+
+  * Use per-Display X error handler, eos-shell #5953
+  * DDK @ f96d1e5015ce97f32b2db8277e9fc079df9f00ce
+
+ -- Daniel Drake <drake@endlessm.com>  Tue, 24 Nov 2015 15:44:57 -0600
+
+mali400-drivers-x11 (6.0.1.0-1) eos; urgency=medium
+
+  * Update to r6p0-01rel0
+  * Make sure not to close GEM buffers too early
+  * Drop exynos4 version
+  * DDK @ 39c7eb50cc4527418225872f19c11aca2a4d6e48
+
+ -- Daniel Drake <drake@endlessm.com>  Thu, 19 Nov 2015 09:55:35 -0600
+
+mali400-drivers-x11 (5.2.0.0-5) eos; urgency=medium
+
+  * Use per-Display X error handler, eos-shell #5953
+  * DDK @ 85c5bc781d39eccbf74b173b7611d4ac61259367
+
+ -- Daniel Drake <drake@endlessm.com>  Mon, 16 Nov 2015 17:33:12 -0600
+
+mali400-drivers-x11 (5.2.0.0-4) eos; urgency=medium
+
+  * Enable NEON optimizations, eos-shell #5827
+  * DDK @ 6127e0aed8a3389bd8bcfdf5954b1a54dd28205e
+
+ -- Daniel Drake <drake@endlessm.com>  Mon, 05 Oct 2015 09:51:28 -0600
+
+mali400-drivers-x11 (5.2.0.0-3) eos; urgency=medium
+
+  * Request O_RDWR access to dmabufs, eos-shell #5448
+  * DDK @ 995a546e8f9264a27d3e9808da0a5a80853ca663
+
+ -- Daniel Drake <drake@endlessm.com>  Thu, 27 Aug 2015 15:09:32 -0600
+
+mali400-drivers-x11 (5.2.0.0-2) eos; urgency=medium
+
+  * Fix GEM handle leak, eos-shell #5469
+  * DDK @ ec7b65dc369a05139ec657e7a69d2e260d861327
+
+ -- Daniel Drake <drake@endlessm.com>  Tue, 18 Aug 2015 07:02:39 -0600
+
+mali400-drivers-x11 (5.2.0.0-1) eos; urgency=medium
+
+  * Rebase on r5p2-00rel0
+  * DDK @ ffb33ead92e0e6ee612a6d357ba0e1fa77d9e7f5
+
+ -- Daniel Drake <drake@endlessm.com>  Tue, 11 Aug 2015 11:55:32 +0800
+
+mali400-drivers-x11 (5.1.1.0-7) eos; urgency=medium
+
+  * Allow eglSetInterval(0) for benchmarks
+  * DDK @ 0d3e743fba7321aa609e6b2f8b3c2185210e5207
+
+ -- Daniel Drake <drake@endlessm.com>  Tue, 30 Jun 2015 14:31:48 -0600
+
+mali400-drivers-x11 (5.1.1.0-6) eos; urgency=medium
+
+  * Switch from UMP to dma_buf version. eos-shell #5231
+  * DDK @ 66b7d02b3a7a5f4d4d6979d36b1b57e6ae8d5f64
+
+ -- Daniel Drake <drake@endlessm.com>  Mon, 29 Jun 2015 16:52:26 -0600
+
+mali400-drivers-x11 (5.1.1.0-5) eos; urgency=medium
+
+  * Use dlsym(RTLD_DEFAULT) to resolve our own symbols. eos-shell #5166
+
+ -- Daniel Drake <drake@endlessm.com>  Mon, 15 Jun 2015 16:00:47 -0600
+
+mali400-drivers-x11 (5.1.1.0-4) eos; urgency=medium
+
+  * Fix install location of libEGL/libGLESv2 symlinks
+
+ -- Daniel Drake <drake@endlessm.com>  Mon, 04 May 2015 12:40:11 -0600
+
+mali400-drivers-x11 (5.1.1.0-3) eos; urgency=medium
+
+  * Rework packaging mostly according to Ubuntu's guidance on packaging
+    alternate EGL implementations.
+    Reduce number of packages: Mali's EGL/GLES2 are the same library,
+    and no need to ship unused development headers now that Mesa's can be
+    installed.
+    eos-shell #4151
+
+ -- Daniel Drake <drake@endlessm.com>  Wed, 29 Apr 2015 06:51:47 -0600
+
+mali400-drivers-x11 (5.1.1.0-2) eos; urgency=medium
+
+  * Update to DDK @ 60b6f174438d59299734bcb424431bea1145ae2d
+  * Fixes buffer size of RGBX32 EGLConfig (#4532)
+
+ -- Daniel Drake <drake@endlessm.com>  Wed, 22 Apr 2015 12:48:45 -0600
+
+mali400-drivers-x11 (5.1.1.0-1) eos; urgency=medium
+
+  * Update to DDK @ 81650b117699e1fb261095ac9ec77a21a755a2d1
+  * Fixes extra sync to vblank (#2402)
+
+ -- Daniel Drake <drake@endlessm.com>  Thu, 02 Apr 2015 11:14:19 -0600
+
+mali400-drivers-x11 (5.1.1.0-0) eos; urgency=medium
+
+  * Update to r5p1-01rel0
+  * libGLESv2.so no longer needed in non-dev packages
+  * Built from DDK @ fdf60a05445b557a4c12fde66880976933e9323c
+
+ -- Daniel Drake <drake@endlessm.com>  Wed, 01 Apr 2015 08:02:47 -0600
+
+mali400-drivers-x11 (3.0-5) eos; urgency=medium
+
+  * Update meson8 to mali450-r0p0-gles20-gles11-linux-x11-ump-umplock
+
+ -- Daniel Drake <drake@endlessm.com>  Mon, 19 Jan 2015 14:22:57 -0600
+
+mali400-drivers-x11 (3.0-4) eos; urgency=medium
+
+  * Fix -dev package dependencies
+
+ -- Daniel Drake <drake@endlessm.com>  Fri, 12 Dec 2014 11:29:15 -0800
+
+mali400-drivers-x11 (3.0-3) eos; urgency=medium
+
+  * Depend on specific libump subpackage
+
+ -- Daniel Drake <drake@endlessm.com>  Thu, 11 Dec 2014 11:44:41 -0800
+
+mali400-drivers-x11 (3.0-2) eos; urgency=medium
+
+  * Add dependency on libump1 which is now in a separate package
+
+ -- Daniel Drake <drake@endlessm.com>  Thu, 11 Dec 2014 10:19:35 -0800
+
+mali400-drivers-x11 (3.0-1) eos; urgency=medium
+
+  * Remove unused openvg/gles1 packages
+  * Put existing drivers in exynos4 subpackages, and add meson8 drivers too
+  * Replace EGL/GLES headers with ones from Mesa (eos-shell #967)
+    (the previous ones were for Mali fbdev environments)
+
+ -- Daniel Drake <drake@endlessm.com>  Tue, 09 Dec 2014 18:41:28 -0800
+
+mali400-drivers-x11 (2.1+binpatch1-0endless3) eos; urgency=medium
+
+  * Update to new r4p0 hack from hardkernel, to avoid caching
+    GetBuffers results (eos-shell #3775)
+
+ -- Daniel Drake <drake@endlessm.com>  Fri, 31 Oct 2014 11:49:29 -0600
+
+mali400-drivers-x11 (2.1+binpatch1-0endless2) eos; urgency=low
+
+  * Update to r4p0 + ump + umplock
+
+ -- Daniel Drake <drake@endlessm.com>  Fri, 18 Apr 2014 12:49:06 -0600
+
+mali400-drivers-x11 (2.1+binpatch1-0endless1) unstable; urgency=medium
+
+  * Binary patch libMali to not fail if the X Display pointer has the high bit
+    set
+    [endlessm/eos-shell#2188]
+
+ -- Sjoerd Simons <sjoerd.simons@collabora.co.uk>  Mon, 24 Mar 2014 16:42:04 +0100
+
+mali400-drivers-x11 (2.1-13co9endless1) alphacentauri; urgency=low
+
+  * Provide mesa drivers so real mesa drivers don't overwrite Mali
+    ones.
+    [endlessm/eos-shell#967]
+
+ -- Juan A. Suarez Romero <jasuarez@igalia.com>  Fri, 20 Dec 2013 18:05:55 +0100
+
+mali400-drivers-x11 (2.1-13co9) alphacentauri; urgency=low
+
+  * Add a conflict to libgles2-mesa-dev as our normal libgles package installs
+    a the plain .so.
+  * Don't unset LD_LIBRARY_PATH entries from the environment
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Tue, 20 Aug 2013 10:59:18 +0200
+
+mali400-drivers-x11 (2.1-13co8) alphacentauri; urgency=low
+
+  * Install libGLES{v1_CM,v2}.so in the non dev package
+ 
+ -- Javier Martinez <javier.martinez@collabora.co.uk>  Mon, 29 Jul 2013 17:28:10 +0200
+
+mali400-drivers-x11 (2.1-13co7) alphacentauri; urgency=low
+
+  * d/control:
+    - install libUMP.so in mali400-coreutils and make libump-mali400 dep on it 
+
+ -- Hector Oron <hector.oron@collabora.co.uk>  Sat, 20 Jul 2013 04:03:31 +0200
+
+mali400-drivers-x11 (2.1-13co6) alphacentauri; urgency=low
+
+  * d/mali400-corelibs.udev:
+    - add udev rules for video devices
+
+ -- Hector Oron <hector.oron@collabora.co.uk>  Sat, 20 Jul 2013 03:34:50 +0200
+
+mali400-drivers-x11 (2.1-13co5) alphacentauri; urgency=low
+
+  * d/control:
+    - add mali400-corelibs as depend of runtime libs.
+
+ -- Hector Oron <hector.oron@collabora.co.uk>  Sat, 20 Jul 2013 03:14:23 +0200
+
+mali400-drivers-x11 (2.1-13co4) alphacentauri; urgency=low
+
+  * Fix links for shared libraries. 
+
+ -- Hector Oron <hector.oron@collabora.co.uk>  Sat, 20 Jul 2013 03:05:24 +0200
+
+mali400-drivers-x11 (2.1-13co3) alphacenatauri; urgency=low
+
+  * Refine links.
+
+ -- Andrew Lee (李健秋) <andrew.lee@collabora.co.uk>  Sat, 20 Jul 2013 03:16:33 +0800
+
+mali400-drivers-x11 (2.1-13co2) alphacenatauri; urgency=low
+
+  * Fixed libMali.so install.
+
+ -- Andrew Lee (李健秋) <andrew.lee@collabora.co.uk>  Sat, 20 Jul 2013 01:56:29 +0800
+
+mali400-drivers-x11 (2.1-13co1) alphacenatauri; urgency=low
+
+  * Initial release.
+
+ -- Andrew Lee (李健秋) <andrew.lee@collabora.co.uk>  Thu, 18 Jul 2013 01:01:03 +0800

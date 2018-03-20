@@ -1,0 +1,26 @@
+Source: mali400-drivers-x11
+Section: graphics
+Priority: optional
+Maintainer: Andrew Lee (李健秋) <andrew.lee@collabora.co.uk>
+Standards-Version: 3.9.4
+Build-Depends: debhelper (>= 9), libump-dev, libxfixes-dev, libxext-dev,
+ libxdamage-dev, libdrm-dev
+
+Package: mali400-drivers-meson8
+Section: libs
+Architecture: armhf
+Depends: ${misc:Depends}, ${shlibs:Depends}, mali400-corelibs
+Pre-Depends: ${misc:Pre-Depends}, dpkg (>= 1.15.6~)
+Breaks: libegl1-mali400-meson8, libgles2-mali400-meson8, mali400-corelibs-meson8
+Replaces: libegl1-mali400-meson8, libgles2-mali400-meson8, mali400-corelibs-meson8
+Provides: libgles2, libegl1, libegl1-x11
+Multi-Arch: same
+Description: Mali 400 EGL/GLESv2 for Meson8
+
+Package: mali400-corelibs
+Section: libs
+Architecture: armhf
+Depends: ${misc:Depends}, ${shlibs:Depends}, libump1, glx-alternative-mali400
+Pre-Depends: ${misc:Pre-Depends}, dpkg (>= 1.15.6~)
+Multi-Arch: same
+Description: Mali 400 core libraries

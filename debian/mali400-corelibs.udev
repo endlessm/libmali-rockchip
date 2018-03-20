@@ -1,0 +1,3 @@
+KERNEL=="mali",SUBSYSTEM=="misc",MODE="0777",GROUP="video"
+KERNEL=="ump",SUBSYSTEM=="ump",MODE="0777",GROUP="video"
+KERNEL=="umplock",SUBSYSTEM=="umplock",MODE="0777",GROUP="video"

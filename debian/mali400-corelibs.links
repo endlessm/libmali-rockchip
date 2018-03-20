@@ -1,0 +1,9 @@
+usr/lib/mali400/arm-linux-gnueabihf/libMali.so		usr/lib/mali400/arm-linux-gnueabihf/libEGL.so.1.4
+usr/lib/mali400/arm-linux-gnueabihf/libMali.so		usr/lib/mali400/arm-linux-gnueabihf/libGLESv2.so.2.0
+usr/lib/mali400/arm-linux-gnueabihf/libEGL.so.1.4	usr/lib/mali400/arm-linux-gnueabihf/libEGL.so.1
+usr/lib/mali400/arm-linux-gnueabihf/libGLESv2.so.2.0	usr/lib/mali400/arm-linux-gnueabihf/libGLESv2.so.2
+usr/lib/mali400/arm-linux-gnueabihf/flatpak/libMaliWrapper.so	usr/lib/mali400/arm-linux-gnueabihf/flatpak/libEGL.so.1.4
+usr/lib/mali400/arm-linux-gnueabihf/flatpak/libMaliWrapper.so	usr/lib/mali400/arm-linux-gnueabihf/flatpak/libGLESv2.so.2.0
+usr/lib/mali400/arm-linux-gnueabihf/flatpak/libEGL.so.1.4	usr/lib/mali400/arm-linux-gnueabihf/flatpak/libEGL.so.1
+usr/lib/mali400/arm-linux-gnueabihf/flatpak/libGLESv2.so.2.0	usr/lib/mali400/arm-linux-gnueabihf/flatpak/libGLESv2.so.2
+usr/lib/mali400/arm-linux-gnueabihf/flatpak			usr/lib/mali400/arm-linux-gnueabihf/flatpak/lib
