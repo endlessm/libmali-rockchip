@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Andrew Lee (李健秋) <andrew.lee@collabora.co.uk>
 Standards-Version: 3.9.4
 Build-Depends: debhelper (>= 9), libump-dev, libxfixes-dev, libxext-dev,
- libxdamage-dev, libdrm-dev
+ libxdamage-dev, libdrm-dev, libx11-xcb1, libxcb-dri2-0
 
 Package: mali-t76x-drivers-rk3288
 Section: libs
