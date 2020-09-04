@@ -1,2 +1,10 @@
-drivers/rk3288/libMali.so		usr/lib/mali-t76x/arm-linux-gnueabihf/
-drivers/rk3288/libMali.so		usr/lib/mali-t76x/arm-linux-gnueabihf/flatpak/
+drivers/rk3288/libEGL.so.1	usr/lib/mali-t76x/arm-linux-gnueabihf/
+drivers/rk3288/libEGL.so.1	usr/lib/mali-t76x/arm-linux-gnueabihf/flatpak/
+drivers/rk3288/libgbm.so.1	usr/lib/mali-t76x/arm-linux-gnueabihf/
+drivers/rk3288/libgbm.so.1	usr/lib/mali-t76x/arm-linux-gnueabihf/flatpak/
+drivers/rk3288/libGLESv2.so.2	usr/lib/mali-t76x/arm-linux-gnueabihf/
+drivers/rk3288/libGLESv2.so.2	usr/lib/mali-t76x/arm-linux-gnueabihf/flatpak/
+drivers/rk3288/libMali.so.1	usr/lib/mali-t76x/arm-linux-gnueabihf/
+drivers/rk3288/libMali.so.1	usr/lib/mali-t76x/arm-linux-gnueabihf/flatpak/
+drivers/rk3288/libmali.so.1	usr/lib/mali-t76x/arm-linux-gnueabihf/
+drivers/rk3288/libmali.so.1	usr/lib/mali-t76x/arm-linux-gnueabihf/flatpak/

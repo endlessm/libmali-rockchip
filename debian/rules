@@ -2,3 +2,7 @@
 
 %:
 	dh $@
+
+# Libraries all link to each other, so need to tell dpkg-shlibdeps where they live
+override_dh_shlibdeps:
+	dh_shlibdeps -l/usr/lib/mali-t76x/arm-linux-gnueabihf
